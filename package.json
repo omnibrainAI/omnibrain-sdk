@@ -1,0 +1,60 @@
+{
+  "name": "omnibrain-sdk",
+  "version": "0.1.0",
+  "description": "SDK for OmniBrain AI agent collaboration system",
+  "main": "dist/sdk/index.js",
+  "types": "dist/sdk/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "keywords": [
+    "ai",
+    "agents",
+    "collaboration",
+    "automation",
+    "solana",
+    "blockchain",
+    "development"
+  ],
+  "author": "OmniBrain Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omnibrainai/omnibrain-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/omnibrainai/omnibrain-sdk/issues"
+  },
+  "homepage": "https://docs.omnibrain.fun",
+  "dependencies": {
+    "@solana/wallet-adapter-base": "^0.9.0",
+    "@solana/wallet-adapter-phantom": "^0.9.0",
+    "@solana/web3.js": "^1.87.0",
+    "@types/node": "^20.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "jest": "^29.0.0",
+    "prettier": "^3.0.0",
+    "ts-jest": "^29.0.0",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "@solana/wallet-adapter-base": "^0.9.0",
+    "@solana/web3.js": "^1.87.0"
+  }
+}
